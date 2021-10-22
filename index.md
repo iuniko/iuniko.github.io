@@ -7,7 +7,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+![avatar](https://www.baidu.com/img/flexible/logo/pc/result@2.png)
 ```markdown
 Syntax highlighted code block
 
@@ -17,8 +17,6 @@ Syntax highlighted code block
 
 - Bulleted
 - List
-
-![avatar](https://www.baidu.com/img/flexible/logo/pc/result@2.png)
 
 1. Numbered
 2. List
