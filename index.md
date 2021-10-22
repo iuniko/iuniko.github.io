@@ -18,6 +18,8 @@ Syntax highlighted code block
 - Bulleted
 - List
 
+![avatar](https://www.baidu.com/img/flexible/logo/pc/result@2.png)
+
 1. Numbered
 2. List
 
