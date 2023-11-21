@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>js map 双重嵌套</title>
+      <link href="/2023/10/23/js%20map%20%E5%8F%8C%E9%87%8D%E5%B5%8C%E5%A5%97/"/>
+      <url>/2023/10/23/js%20map%20%E5%8F%8C%E9%87%8D%E5%B5%8C%E5%A5%97/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">arr.map((item, index) =&gt; &#123;</span><br><span class="line">    return (</span><br><span class="line">        item.arr2.map((item2, index2) =&gt; &#123;</span><br><span class="line">            return (</span><br><span class="line">                console.log(item2)</span><br><span class="line">            )</span><br><span class="line">        &#125;)</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mysqli 在已有字段的表中插入字段</title>
+      <link href="/2023/10/19/mysqli%20%E5%9C%A8%E5%B7%B2%E6%9C%89%E5%AD%97%E6%AE%B5%E7%9A%84%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E5%AD%97%E6%AE%B5/"/>
+      <url>/2023/10/19/mysqli%20%E5%9C%A8%E5%B7%B2%E6%9C%89%E5%AD%97%E6%AE%B5%E7%9A%84%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E5%AD%97%E6%AE%B5/</url>
+      
+        <content type="html"><![CDATA[<p>公式：$mysqli-&gt;query(“ALTER TABLE <code>表名</code> ADD <code>字段</code> 字段类型”)<br>举例：$sql &#x3D; $mysqli-&gt;query(“ALTER TABLE curd_copt ADD <code>$flag</code> tinyint(1) NULL”) or die($mysqli-&gt;error);</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysqli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序本地图片加载不出来</title>
+      <link href="/2023/10/12/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5/"/>
+      <url>/2023/10/12/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5/</url>
+      
+        <content type="html"><![CDATA[<p>具体表现为：<a href="http://127.0.0.1:端口号/__pageframe__/uni_modules/static/logo.png">http://127.0.0.1:端口号/__pageframe__/uni_modules/static/logo.png</a></p><p>原因：前端代码里对图片使用了..&#x2F;来引用路径，<a href="http://127.0.0.1:端口号识别不了该文件路径孤儿导致。">http://127.0.0.1:端口号识别不了该文件路径孤儿导致。</a></p><p>解决方案：去除..&#x2F;引用，比如原来的..&#x2F;..&#x2F;..&#x2F;static&#x2F;logo.png改为&#x2F;static&#x2F;logo.png。</p><p>最后的话：en，不一定对你有用，也不知道上线对不对，之后的事情之后再说吧。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ts 箭头函数返回值被包裹进了一层对象，导致函数变成void，void就是没有返回值</title>
+      <link href="/2023/10/11/ts%20%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC%E8%A2%AB%E5%8C%85%E8%A3%B9%E8%BF%9B%E4%BA%86%E4%B8%80%E5%B1%82%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%AF%BC%E8%87%B4%E5%87%BD%E6%95%B0%E5%8F%98%E6%88%90void%EF%BC%8Cvoid%E5%B0%B1%E6%98%AF%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
+      <url>/2023/10/11/ts%20%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC%E8%A2%AB%E5%8C%85%E8%A3%B9%E8%BF%9B%E4%BA%86%E4%B8%80%E5%B1%82%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%AF%BC%E8%87%B4%E5%87%BD%E6%95%B0%E5%8F%98%E6%88%90void%EF%BC%8Cvoid%E5%B0%B1%E6%98%AF%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC/</url>
+      
+        <content type="html"><![CDATA[<p>如题。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>聚餐</title>
+      <link href="/2023/10/06/%E8%81%9A%E9%A4%90/"/>
+      <url>/2023/10/06/%E8%81%9A%E9%A4%90/</url>
+      
+        <content type="html"><![CDATA[<p><image src="https://sns-webpic-qc.xhscdn.com/202310262257/a34d3424ab9721d84ab070d4bba88ade/b5fa711b-c537-3362-8995-0b0812d045b3!nd_whgt34_webp_wm_1"></image></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>天哪，连上9天班</title>
+      <link href="/2023/10/06/%E5%A4%A9%E5%93%AA%EF%BC%8C%E8%BF%9E%E4%B8%8A9%E5%A4%A9%E7%8F%AD/"/>
+      <url>/2023/10/06/%E5%A4%A9%E5%93%AA%EF%BC%8C%E8%BF%9E%E4%B8%8A9%E5%A4%A9%E7%8F%AD/</url>
+      
+        <content type="html"><![CDATA[<p>啊啊啊啊啊啊啊啊啊啊啊，人为什么要发明上班这种东西<br><image src="https://img1.baidu.com/it/u=1125352624,1641173232&fm=253&fmt=auto&app=138&f=JPEG?w=382&h=360"></image></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建后端开发环境（新手篇）</title>
+      <link href="/2023/10/04/%E6%90%AD%E5%BB%BA%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%88%E6%96%B0%E6%89%8B%E7%AF%87%EF%BC%89/"/>
+      <url>/2023/10/04/%E6%90%AD%E5%BB%BA%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%88%E6%96%B0%E6%89%8B%E7%AF%87%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要使用wampserver来搭建后端windows开发环境。</p><p>wamp下载地址：<a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/">https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/</a></p><p>注意：该wamp版本需要使用win7以上机器开发。</p><p>我现在下载的是3.3.0版本的wamp，下载完后无脑next就行了，他会直接帮你装好一下环境：</p><p>localhost：WAMP服务信息界面。<br>phpMyAdmin：数据库的管理工具。<br>www目录：网站的根目录地址。<br>Apache：Web服务器软件。</p><p>之后，点击wamp图标，启动服务；等到图标变成绿色，就代表服务启动成功，接着你就可以在c盘的www目录里面写php文件来调试了。</p><p>参考资料：<a href="http://t.csdn.cn/sudQx">http://t.csdn.cn/sudQx</a></p><p>如何修改wamp打开的默认浏览器：找到wamp安装位置，并在里面找到wampmanager.conf，搜索navigator，把它的值改成你的浏览器的安装路径。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>国庆旅游</title>
+      <link href="/2023/10/01/%E5%9B%BD%E5%BA%86%E6%97%85%E6%B8%B8/"/>
+      <url>/2023/10/01/%E5%9B%BD%E5%BA%86%E6%97%85%E6%B8%B8/</url>
+      
+        <content type="html"><![CDATA[<p>冲冲冲！！！<br><image src="https://img2.baidu.com/it/u=497728543,3454865622&fm=253&fmt=auto&app=120&f=JPEG?w=1067&h=800"></image></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css之邮票锯齿</title>
+      <link href="/2023/09/30/css%E4%B9%8B%E9%82%AE%E7%A5%A8%E9%94%AF%E9%BD%BF/"/>
+      <url>/2023/09/30/css%E4%B9%8B%E9%82%AE%E7%A5%A8%E9%94%AF%E9%BD%BF/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;css之邮票锯齿&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .box &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        left: 10px;</span><br><span class="line">        width: 220px;</span><br><span class="line">        height: 220px;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .box::before &#123;</span><br><span class="line">        content: &quot;&quot;;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 0;</span><br><span class="line">        display: block;</span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 100%;</span><br><span class="line">        background-size: 40px 20px;</span><br><span class="line"></span><br><span class="line">        left: -20px;</span><br><span class="line">        background-color: transparent;</span><br><span class="line">        background-position: 100% 35%;</span><br><span class="line">        background-image: linear-gradient(-45deg, #ccc 25%, transparent 25%, transparent),</span><br><span class="line">            linear-gradient(-135deg, #ccc 25%, transparent 25%, transparent),</span><br><span class="line">            linear-gradient(-45deg, transparent 75%, #ccc 75%),</span><br><span class="line">            linear-gradient(-135deg, transparent 75%, #ccc 75%);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>中秋快乐！</title>
+      <link href="/2023/09/29/%E4%B8%AD%E7%A7%8B%E5%BF%AB%E4%B9%90%EF%BC%81/"/>
+      <url>/2023/09/29/%E4%B8%AD%E7%A7%8B%E5%BF%AB%E4%B9%90%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<p><image src="https://img1.baidu.com/it/u=2643632687,641813439&fm=253&fmt=auto&app=120&f=JPEG?w=794&h=499"></image></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序、h5、App各端的条件编译</title>
+      <link href="/2023/09/20/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%81h5%E3%80%81App%E5%90%84%E7%AB%AF%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91/"/>
+      <url>/2023/09/20/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%81h5%E3%80%81App%E5%90%84%E7%AB%AF%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 表示代码仅在 H5 平台上面执行，其他平台不执行</span><br><span class="line"></span><br><span class="line">　　&lt;!-- #ifdef H5 --&gt;</span><br><span class="line">　　　　需条件编译的代码</span><br><span class="line">　　&lt;!-- #endif --&gt;</span><br><span class="line"></span><br><span class="line">// 表示代码在 H5 平台上面不执行，其他平台上面执行</span><br><span class="line">　　&lt;!-- #ifndef H5 --&gt;</span><br><span class="line">  　 需条件编译的代码</span><br><span class="line">  &lt;!-- #endif --&gt;</span><br><span class="line"></span><br><span class="line">// 表示代码在 H5 平台和 App 平台上面执行，其他平台上面不执行</span><br><span class="line">&lt;!-- #ifndef H5 || APP-PLUS --&gt;</span><br><span class="line">　　需条件编译的代码 </span><br><span class="line">&lt;!-- #endif --&gt;</span><br></pre></td></tr></table></figure><p>小程序：MP-WEIXIN</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue 变量赋值失败</title>
+      <link href="/2023/09/17/vue%20%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E5%A4%B1%E8%B4%A5/"/>
+      <url>/2023/09/17/vue%20%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E5%A4%B1%E8%B4%A5/</url>
+      
+        <content type="html"><![CDATA[<p>直接看代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 获取屏幕高度</span><br><span class="line">uni.getSystemInfo(&#123;</span><br><span class="line">    success: function (res) &#123;</span><br><span class="line">    this.screHeight = res.screenHeight;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>这个变量screHeight没有被赋值，拿到的还是我设置的初始值。</p><p>原因：this指向的作用域并不是Vue实例本身，所以就无法赋值。</p><p>解决方案：在最外一层绑定this的值，见下文：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let that = this;</span><br><span class="line">// 获取屏幕高度</span><br><span class="line">uni.getSystemInfo(&#123;</span><br><span class="line">    success: function (res) &#123;</span><br><span class="line">    that.screHeight = res.screenHeight;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>如此即可。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue this.$set设置子组件内的值无效（uniapp+vue）</title>
+      <link href="/2023/09/02/vue%20this.$set%E8%AE%BE%E7%BD%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%80%BC%E6%97%A0%E6%95%88%EF%BC%88uniapp+vue%EF%BC%89/"/>
+      <url>/2023/09/02/vue%20this.$set%E8%AE%BE%E7%BD%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%80%BC%E6%97%A0%E6%95%88%EF%BC%88uniapp+vue%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>前言：怎么说呢，子组件内嵌套了多层对象和数组，业务逻辑也是在子组件内处理，如何修改多层嵌套的对象数组的值？</p><p>vue提供了一个this.$set方法去改变对应的值，实测在uniapp打包的微信小程序中无法使用该方法，而在Android端则可以，那有没有两全其美的方法？</p><p>答案是有，在修改深层次的值时可以通过先保存原值（this.dataSource）给一个变量（arr），然后清除原值（this.dataSource &#x3D; [];），接着用这个arr去操作数据，最后再把arr赋值给this.dataSource，即：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [];</span><br><span class="line">arr = this.dataSource;</span><br><span class="line">this.dataSource = [];</span><br><span class="line">// 此处进行业务操作// ....</span><br><span class="line">this.dataSource = arr;</span><br></pre></td></tr></table></figure><p>如果直接去用this.dataSource进行业务操作，那么结果和this.$set是一样的，视图并不会更新。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>uniapp之微信小程序使用canvas时层级太高遮住其他页面如何处理？</title>
+      <link href="/2023/08/28/uniapp%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8canvas%E6%97%B6%E5%B1%82%E7%BA%A7%E5%A4%AA%E9%AB%98%E9%81%AE%E4%BD%8F%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86/"/>
+      <url>/2023/08/28/uniapp%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8canvas%E6%97%B6%E5%B1%82%E7%BA%A7%E5%A4%AA%E9%AB%98%E9%81%AE%E4%BD%8F%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>前言：如题。</p><p>原因：app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，部分组件如map、video、textarea、canvas通过原生控件实现，原生组件层级高于前端组件（类似flash层级高于div）。—— uniapp</p><p>解决方案：</p><p>1.使用cover-view，该方案由uniapp官方提供，链接：<a href="https://uniapp.dcloud.net.cn/component/cover-view.html#cover-view">https://uniapp.dcloud.net.cn/component/cover-view.html#cover-view</a></p><p>2.使用位移：监听屏幕滚动，当移动到要遮住的位置时，隐藏canvas。</p><p>3.使用image替换canvas，如果业务非得要求使用canvas，则可以在移动到遮住的位置时，把canvas替换成image。参考资料：<a href="http://t.csdn.cn/E7A6o">http://t.csdn.cn/E7A6o</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> uniapp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序之微信开发者工具调接口没问题，真机测试接口报网络错误</title>
+      <link href="/2023/08/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%B0%83%E6%8E%A5%E5%8F%A3%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E6%8E%A5%E5%8F%A3%E6%8A%A5%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/"/>
+      <url>/2023/08/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%B0%83%E6%8E%A5%E5%8F%A3%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E6%8E%A5%E5%8F%A3%E6%8A%A5%E7%BD%91%E7%BB%9C%E9%94%99%E8%AF%AF/</url>
+      
+        <content type="html"><![CDATA[<p>今日遇到个奇怪的问题，如题所述，真机测试中所有接口都报错，均返回网络错误，原因就是接口域名的证书到期了。</p><p>其实，如果在开发者工具不勾选“不校验域名证书”一项，开发工具调接口就会报错，这原因平时比较难想到，遇到这种问题，一般都是交给后端去处理。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git remote -v 为空</title>
+      <link href="/2023/08/10/git%20remote%20-v%20%E4%B8%BA%E7%A9%BA/"/>
+      <url>/2023/08/10/git%20remote%20-v%20%E4%B8%BA%E7%A9%BA/</url>
+      
+        <content type="html"><![CDATA[<p>我想给新建的项目A创建一个版本库，so，我git init，然后我用git remote -v查看，回车然后就为空了，百度了一下，说是没有你该仓库没有远程仓库地址；</p><p>我还以为会链接到我其他的仓库去，看来不会，so，我在github创建了一个远程仓库，然后用git remote -v链接到该仓库；即git remote -v 远程仓库地址；</p><p>回车！即出现我输入的远程仓库地址，好了，接着git pull 远程仓库地址，再git push 远程仓库地址后报错了👉🤡，</p><p>没法子，我只能把远程仓库地址拉下来，然后把项目A的文件放进去，最后git pull，git push才弄上去。。。。。。</p><p>。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。so，我对git的运用还是不熟练呀。。。。。。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于uview组件u-number-box的一些错误使用示范</title>
+      <link href="/2023/08/09/%E5%85%B3%E4%BA%8Euview%E7%BB%84%E4%BB%B6u-number-box%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E4%BD%BF%E7%94%A8%E7%A4%BA%E8%8C%83/"/>
+      <url>/2023/08/09/%E5%85%B3%E4%BA%8Euview%E7%BB%84%E4%BB%B6u-number-box%E7%9A%84%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E4%BD%BF%E7%94%A8%E7%A4%BA%E8%8C%83/</url>
+      
+        <content type="html"><![CDATA[<p>此处记录我对u-number-box的错误使用：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u-number-box v-model=&quot;item.num&quot; @change=&quot;onChangeNum(item,index)&quot;&gt;&lt;/u-number-box&gt;</span><br></pre></td></tr></table></figure><p>业务：修改购物车数量，遍历数据data给u-number-box赋值，u-number-box的change事件接受一个函数onChangeNum并进行逻辑处理。</p><p>刚开始我是给onChangeNum直接传对应值以及商品的下标，然后拿到u-number-box改变后的值去修改购物车数量，但是我发现拿到的数据不对，</p><p>比如我打印选中修改的商品数据data[index]对象中的num为2，但实际上data[index].num为1，也就是说原本是1，我改成了2，但实际上还是1。</p><p>这个我不明白为何会如此，是深浅拷贝导致的吗？</p><p>后来我不给onChangeNum传值，即：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u-number-box v-model=&quot;item.num&quot; :name=&quot;index&quot; @change=&quot;onChangeNum&quot;&gt;&lt;/u-number-box&gt;</span><br></pre></td></tr></table></figure><p>我便拿到了u-number-box事件change传递给onChangeNum的两个值：value和name。</p><p>然后我拿这两个值修改购物车数量就没问题了，value就是value，不要再给商品数据data来赋值了，直接拿value。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> uview </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git命令学习笔记</title>
+      <link href="/2023/08/09/git%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/08/09/git%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>初始化git：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>查看当前仓库状态：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure><p>只查看本地分支名称：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure><p>只查看远程分支名称：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure><p>只查看本地所有分支信息：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure><span id="more"></span><p>同时查看本地和远程分支名称：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure><p>（新建分支后，使用git branch或者git checkout为何查看&#x2F;切换不了新建分支？&#x3D;&#x3D;》拉取最新分支代码即可获取分支信息）</p><p>切换分支（例：test）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br></pre></td></tr></table></figure><p>拉取代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure><p>添加内容到暂存区：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><p>.表示添加当前目录下的所有文件到暂存区<br>git add readme.md 表示添加一个叫readme.md的文件，后面可以跟多个文件，即可上传多个文件<br>将暂存区内容提交到本地仓库：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure><p>git commit -m [message]<br>message为备注信息<br>将暂存区内容提交到远程仓库：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><p>查看提交的历史记录：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure><p>最后附上git的官网下载地址：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p><p>更多学习资料请阅菜鸟教程：<a href="https://www.runoob.com/git/git-basic-operations.html">https://www.runoob.com/git/git-basic-operations.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>立秋</title>
+      <link href="/2023/08/08/%E7%AB%8B%E7%A7%8B/"/>
+      <url>/2023/08/08/%E7%AB%8B%E7%A7%8B/</url>
+      
+        <content type="html"><![CDATA[<div style="text-align: center;">风吹一片叶，万物已惊秋</div><p><image src="https://sns-webpic-qc.xhscdn.com/202310262208/070b43e52aee52864b7acbdc72b6e26f/4f84c3ea-6d2b-3f12-b054-023f0387ffae!nd_whgt34_webp_wm_1"></image></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 秋天 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无法访问此网站网址</title>
+      <link href="/2023/07/26/%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89vscode%E5%A4%B4%E9%83%A8%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
+      <url>/2023/07/26/%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89vscode%E5%A4%B4%E9%83%A8%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A%E7%9A%84%E6%8F%92%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>如果你有安装 koroFileHeader 这个插件,建议你立即,马上卸载掉它!<br>就像这样:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line"> * @Author: xxx xxx+xxx@users.noreply.github.com</span><br><span class="line"> * @Date: 2023-07-26 21:50:32</span><br><span class="line"> * @LastEditors: xxx xxx+xxx@users.noreply.github.com</span><br><span class="line"> * @LastEditTime: 2023-07-26 21:50:32</span><br><span class="line"> * @FilePath: \xxx\啊啊啊啊啊啊啊啊啊啊啊啊.md</span><br><span class="line"> * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure><p>因为它会阻碍你代码的运行!</p><p>删掉它也很简单,直接在 vscode 的左侧菜单栏的扩展里面搜索 koroFileHeader,然后选中它,然后卸载即可!!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vscode 插件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bug </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ts 报异常：并非所有代码路径都返回值</title>
+      <link href="/2023/07/11/ts%E6%8A%A5%E5%BC%82%E5%B8%B8%EF%BC%9A%E5%B9%B6%E9%9D%9E%E6%89%80%E6%9C%89%E4%BB%A3%E7%A0%81%E8%B7%AF%E5%BE%84%E9%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
+      <url>/2023/07/11/ts%E6%8A%A5%E5%BC%82%E5%B8%B8%EF%BC%9A%E5%B9%B6%E9%9D%9E%E6%89%80%E6%9C%89%E4%BB%A3%E7%A0%81%E8%B7%AF%E5%BE%84%E9%83%BD%E8%BF%94%E5%9B%9E%E5%80%BC/</url>
+      
+        <content type="html"><![CDATA[<p>在函数中添加了判断且包含了 return，如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (isTrial) &#123;</span><br><span class="line">  return alert(&quot;666&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>那么 ts 就会报这个异常，这也不算错误，但从 ts 的严格模式来看，是要给定一个默认返回值才行。</p><h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (isTrial) &#123;</span><br><span class="line">  return alert(&quot;666&quot;);</span><br><span class="line">&#125;</span><br><span class="line">return alert(&quot;2333&quot;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> TypeScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无法访问此网站网址</title>
+      <link href="/2023/07/01/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E6%AD%A4%E7%BD%91%E7%AB%99%E7%BD%91%E5%9D%80/"/>
+      <url>/2023/07/01/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E6%AD%A4%E7%BD%91%E7%AB%99%E7%BD%91%E5%9D%80/</url>
+      
+        <content type="html"><![CDATA[<p>新购一域名，并添加了解析，保存后若干分钟访问该域名，报错：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无法访问此网站网址为 http://xxx.yy.com/ 的网页可能暂时无法连接，或者它已永久性地移动到了新网址。</span><br></pre></td></tr></table></figure><ul><li>原因:<ul><li>我给域名添加的解析地址不正确，所以导致无法找到该服务器，故而报错。</li><li>前往你的服务器管理后台,找到域名解析的地方,找到 【记录值】，这里你的服务器公网 ip，如果填错了就无法访问。</li></ul></li></ul><p>注：宝塔建站。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>离骚</title>
+      <link href="/2023/06/06/suiyan/%E7%A6%BB%E9%AA%9A/"/>
+      <url>/2023/06/06/suiyan/%E7%A6%BB%E9%AA%9A/</url>
+      
+        <content type="html"><![CDATA[<p>一曲离骚<br>半注孤魂<br>寥寥青空<br>无聊纳兹</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 离骚 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo 去除博客中的“嗯..! 目前共计”字样</title>
+      <link href="/2023/06/06/hexo/hexo-%E5%8E%BB%E9%99%A4%E5%8D%9A%E5%AE%A2%E4%B8%AD%E7%9A%84%E2%80%9C%E5%97%AF-%E7%9B%AE%E5%89%8D%E5%85%B1%E8%AE%A1%E2%80%9D%E5%AD%97%E6%A0%B7/"/>
+      <url>/2023/06/06/hexo/hexo-%E5%8E%BB%E9%99%A4%E5%8D%9A%E5%AE%A2%E4%B8%AD%E7%9A%84%E2%80%9C%E5%97%AF-%E7%9B%AE%E5%89%8D%E5%85%B1%E8%AE%A1%E2%80%9D%E5%AD%97%E6%A0%B7/</url>
+      
+        <content type="html"><![CDATA[<p>注意：我使用的是next主题。</p><p>找到路径：你的博客\themes\hexo-theme-next\layout，修改archive.swig文件：</p><p>修改前：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;archive-page-counter&quot;&gt;</span><br><span class="line">    &#123;% set cheers %&#125;</span><br><span class="line">    &#123;% set posts_length = site.posts.length %&#125;</span><br><span class="line">    &#123;% if posts_length &gt; 210 %&#125; &#123;% set cheers = &#x27;excellent&#x27; %&#125;</span><br><span class="line">        &#123;% elif posts_length &gt; 130 %&#125; &#123;% set cheers = &#x27;great&#x27; %&#125;</span><br><span class="line">        &#123;% elif posts_length &gt; 80 %&#125; &#123;% set cheers = &#x27;good&#x27; %&#125;</span><br><span class="line">        &#123;% elif posts_length &gt; 50 %&#125; &#123;% set cheers = &#x27;nice&#x27; %&#125;</span><br><span class="line">        &#123;% elif posts_length &gt; 30 %&#125; &#123;% set cheers = &#x27;ok&#x27; %&#125;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">        &#123;% set cheers = &#x27;um&#x27; %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &#123;&#123; __(&#x27;cheers.&#x27; + cheers) &#125;&#125;! &#123;&#123; _p(&quot;counter.archive_posts&quot;, site.posts.length) &#125;&#125; &#123;&#123; __(&#x27;keep_on&#x27;) &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure><p>修改后：目前共计 xx 篇日志。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;archive-page-counter&quot;&gt;</span><br><span class="line">        &#123;&#123; _p(&quot;counter.archive_posts&quot;, site.posts.length) &#125;&#125;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure><p>你也可以全部删掉那些代码，删掉就不会显示了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023-06-05 admin</title>
+      <link href="/2023/06/05/service/2023-06-05%20admin/"/>
+      <url>/2023/06/05/service/2023-06-05%20admin/</url>
+      
+        <content type="html"><![CDATA[<p>暂无</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 维护日志 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo文章设置摘要</title>
+      <link href="/2023/06/03/hexo/hexo%E6%96%87%E7%AB%A0%E8%AE%BE%E7%BD%AE%E6%91%98%E8%A6%81/"/>
+      <url>/2023/06/03/hexo/hexo%E6%96%87%E7%AB%A0%E8%AE%BE%E7%BD%AE%E6%91%98%E8%A6%81/</url>
+      
+        <content type="html"><![CDATA[<p>方法一：直接在文章里的description写摘要</p><p>方法二：在文章里某个地方加入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure><p>这样你就能看见下面出现了一个阅读全文的按钮</p><span id="more"></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Couldn&#39;t find a tree builder with the features you requested: lxml. Do you need to install a parser library?</title>
+      <link href="/2023/06/03/technology/Couldn-t-find-a-tree-builder-with-the-features-you-requested-lxml-Do-you-need-to-install-a-parser-library/"/>
+      <url>/2023/06/03/technology/Couldn-t-find-a-tree-builder-with-the-features-you-requested-lxml-Do-you-need-to-install-a-parser-library/</url>
+      
+        <content type="html"><![CDATA[<p>问题描述：运行一个py文件，报错：找不到具有您请求的功能的树生成器：lxml。你需要安装解析器库吗？<br>原因：有一个叫做lxml的库没有安装，请安装它。<br>运行一个py文件，问题定位到：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html=self.get_html(url)</span><br><span class="line">soup=BeautifulSoup(html,&#x27;lxml&#x27;)</span><br></pre></td></tr></table></figure><p>解决方案：打开cmd，运行下面代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install lxml</span><br></pre></td></tr></table></figure><p>等待安装成功，再次运行py文件就不会报这个错了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo+next主题之如何设置菜单图标</title>
+      <link href="/2023/06/03/hexo/hexo-next%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87/"/>
+      <url>/2023/06/03/hexo/hexo-next%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87/</url>
+      
+        <content type="html"><![CDATA[<p>注意是next主题</p><p>找到 你的博客\themes\hexo-theme-next里的_config.yml文件，搜索menu，如：</p><div class="cnblogs_code"><pre><span style="color: #000000;">menu:  home: </span>/||home  about: /about/||<span style="color: #000000;">user  tags: </span>/tags/||<span style="color: #000000;">tags  categories: </span>/categories/||<span style="color: #000000;">th  archives: </span>/archives/||<span style="color: #000000;">archive  album: </span>/album/</pre></div><p>比如我现在创建了album（相册）菜单，我该怎么添加它的icon呢，是这样的，menu的格式为：</p> <p>菜单名: /菜单名/||图标名称</p><p>注意：/和||之间不要有空格，不然路径会多出一个%20</p><p>OK，把/album/改成/album/||image，即添加了一个名为image的图标</p><span id="more"></span><p>再次注意：image或者上面的user或者tags都是指向hexo引用的fa awesome字体图标库，图标名要和这个库对应上</p><p>我之前是这么写的</p><div class="cnblogs_code"><pre><span style="color: #000000;">album:     url: </span>/album/<span style="color: #000000;">    icon: fa fa</span>-image</pre></div><p>结果发现它的图标是一个圆形的问号，改成这样也不行：</p><div class="cnblogs_code"><pre><span style="color: #000000;">album:     url: </span>/album/<span style="color: #000000;">    icon: image</span></pre></div><p>最后通过观察next主题的默认配置，才发现它的图标要写在/||后面才行。</p><p>&nbsp;</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初试python爬取文章</title>
+      <link href="/2023/06/03/technology/%E5%88%9D%E8%AF%95python%E7%88%AC%E5%8F%96%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/06/03/technology/%E5%88%9D%E8%AF%95python%E7%88%AC%E5%8F%96%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>注意：本实验是在windows系统下操作。</p><p>首先配置python环境以及安装一些必要的库：</p><p>安装python请前往python官网下载，仙人指路👉<a href="https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe" target="_blank">https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe</a></p><p>下载完并安装成功后，在终端输入</p><div class="cnblogs_code"><pre>py --version</pre></div><pre>输出：Python 3.11.3</pre><p>检查pip是否安装成功，ps：一般现在安装python都会带有pip；</p><div class="cnblogs_code"><pre>pip --version</pre></div><p>或者</p><div class="cnblogs_code"><pre>pip3 --version</pre></div> <span id="more"></span>输出pip 22.3.1<p>如果都不输出版本号，可以查看一下系统变量有没有配置了pip的路径，没有配置就配置一下：</p><p>找到python安装路径，打开环境变量-系统变量，选择path，选择新建，把python script文件夹路径复制进去即可。</p><p>实在是没有安装可以到这里安装下载pip：<a href="https://pip.pypa.io/en/stable/installation/#" target="_blank">https://pip.pypa.io/en/stable/installation/#</a></p><p>上面两都有版本号了即表示第一步成功，接着安装4个库：</p><div class="cnblogs_code"><pre>pip install requests</pre></div><div class="cnblogs_code"><pre>pip install beautifulsoup4</pre></div><div class="cnblogs_code"><pre>pip install xlwt</pre></div><div class="cnblogs_code"><pre>pip install pymysql</pre></div><div>各自库的作用是：</div><div>requests：获取网页数据</div><div>BeautifulSoup：网页解析</div><div><div>xlwt：进行excel操作</div><div>pymysql：<em id="__mceDel">连接mysql数据库</em></div></div><p>这样第二步就算完成了，第三步：新建hello.py，输入代码：</p><div class="cnblogs_code"><pre># -*- coding = utf-8 -*-<span style="color: #000000;"># @Time : </span>2022/4/27 8:21<span style="color: #000000;"># @Author :王敬博# @File : test.py# @Software: PyCharmfrom bs4 import BeautifulSoup  #网页解析import re    #正则表表达式文字匹配import urllib.request,urllib.error  #指定url，获取网页数据import xlwt  #进行excel操作import sqlite3  #进行SQLite数据库操作import pymysql.cursors  #连接mysql数据库<p>def main():<br>    baseurl </span>&#x3D; “<a href="https://www.cnblogs.com/wjingbo/default.html?page=">https://www.cnblogs.com/wjingbo/default.html?page=</a>“<span style="color: #000000;"><br>    datalist </span>&#x3D;<span style="color: #000000;"> getData(baseurl)         #调研分析数据函数<br>    #</span>1<span style="color: #000000;"> 爬取网页<br>    savepath </span>&#x3D; “.\权。的博客信息.xls”<span style="color: #000000;">     #excel保存的位置名称 #注意：！这里的名字可以自定义，比如iuniko.xls<br>    saveData(datalist,savepath)          #调用保存函数</p><p>def askURL(url):<br>    head </span>&#x3D;<span style="color: #000000;"> {   #伪装请求头，模拟浏览器访问<br>       </span>“User-Agent”:” Mozilla &#x2F; 5.0(Linux;Android6.0;Nexus5 Build &#x2F; MRA58N) AppleWebKit &#x2F; 537.36(KHTML, likeGecko) Chrome &#x2F; 99.0.4844.51Mobile Safari &#x2F; 537.36”<span style="color: #000000;"><br>    }<br>    request </span>&#x3D; urllib.request.Request(url,headers&#x3D;<span style="color: #000000;">head)<br>    html </span>&#x3D; “”<br>    <span style="color: #0000ff;">try</span><span style="color: #000000;">:<br>        response </span>&#x3D;<span style="color: #000000;"> urllib.request.urlopen(request)<br>        html </span>&#x3D; response.read().decode(‘utf-8’<span style="color: #000000;">)<br>        #print(html)<br>    except urllib.error.URLError as e:<br>        </span><span style="color: #0000ff;">if</span> hasattr(e,”code”<span style="color: #000000;">):<br>            print(e.code)<br>        </span><span style="color: #0000ff;">if</span> hasattr(e,”reason”<span style="color: #000000;">):<br>            print(e.reason)<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> html  #返回爬到所有的html数据</p><p>#正则表达式控制获取详细内容<br>findTitle </span>&#x3D; re.compile(r’&lt;span&gt;(.<em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">,re.S)<br>findlink </span>&#x3D; re.compile(r’&lt;a class&#x3D;”postTitle2 vertical-middle” href&#x3D;”(.</em>?)”&gt;’<span style="color: #000000;">)<br>findzhaiyao </span>&#x3D; re.compile(r’&lt;div class&#x3D;”c_b_p_desc”(.<em>?)&lt;a’<span style="color: #000000;">,re.S)<br>#注意了！这里有一个坑，原作者没有标记出来，就是下面这个权字你得换成你的博客的名字，比如我博客名字叫哎呦你可棒棒了，那就填这个名字进去，不然会报错：list index out of range<br>finddate </span>&#x3D; re.compile(r’&lt;div class&#x3D;”postDesc”&gt;posted @(.</em>?)权’<span style="color: #000000;">,re.S)<br>findread </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-view-count” data-post-id&#x3D;(.<em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)<br>findcomment </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-comment-count” data-post-id&#x3D;(.</em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)<br>finddigg </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-digg-count” data-post-id&#x3D;(.*?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)</p><p>def getData(baseurl):<br>    datalist </span>&#x3D; []  # 2<span style="color: #000000;"> 解析数据<br>    allTitle </span>&#x3D;<span style="color: #000000;"> []  #存储标题<br>    allLink </span>&#x3D;<span style="color: #000000;"> []   #存储链接<br>    allZhaiyao </span>&#x3D;<span style="color: #000000;"> [] #存储摘要<br>    alldate </span>&#x3D;<span style="color: #000000;"> []    #存储日期<br>    allRead </span>&#x3D;<span style="color: #000000;"> []    #存储阅读数<br>    allComment </span>&#x3D;<span style="color: #000000;"> [] #存储评论数<br>    allDigg </span>&#x3D;<span style="color: #000000;"> []    #存储推荐数 # 注意：45代表爬取45页，我的公开的随笔数量是440，所以我要写成45，也就是会爬取450条数据<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,10<span style="color: #000000;">):<br>        url </span>&#x3D; baseurl + str(i+1)    #对目标链接地址page&#x3D;<span style="color: #000000;">后面的数字进行循环<br>        html </span>&#x3D;<span style="color: #000000;"> askURL(url)          #调用爬取的函数<br>        soup </span>&#x3D; BeautifulSoup(html, “html.parser”<span style="color: #000000;">)</p><pre><code>    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt; item &lt;span style=&quot;color: #0000ff;&quot;&gt;in&lt;/span&gt; soup.find_all(&#39;div&#39;,class_=&quot;day&quot;&lt;span style=&quot;color: #000000;&quot;&gt;):  #简单过滤信息        #print(item)        item &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; str(item)        title &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findTitle,item)     #匹配数据        allTitle.extend(title)      #添加数据到列表        link &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findlink,item)        allLink.extend(link)        zhaiyao &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findzhaiyao,item)        allZhaiyao.extend(zhaiyao)        date &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(finddate,item)        alldate.extend(date)        readNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findread,item)        allRead.extend(readNum)        commentNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findcomment,item)        allComment.extend(commentNum)        diggNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(finddigg,item)        allDigg.extend(diggNum)#print(allTitle)#print(allLink)#print(allZhaiyao)#print(alldate)#print(allRead)#print(allComment)#print(allDigg)&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt; j &lt;span style=&quot;color: #0000ff;&quot;&gt;in&lt;/span&gt; range(0,100&lt;span style=&quot;color: #000000;&quot;&gt;):     #循环10页就是100条数据，45页就是450条数据 #这个循环是过滤掉所有不需要的信息    data &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; []    title &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allTitle[j].strip()     #去除字符串里的空格    data.append(title)    link &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allLink[j]    data.append(link)    zhaiyao &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allZhaiyao[j].strip()    zhaiyao &lt;/span&gt;= zhaiyao.split(&#39;&quot;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]    data.append(zhaiyao.replace(&lt;/span&gt;&quot;\n&quot;,&quot;&quot;&lt;span style=&quot;color: #000000;&quot;&gt;))    date &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; alldate[j].strip()    data.append(date)    readNum &lt;/span&gt;= allRead[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]      #通过分割字符串来去除无用信息    data.append(readNum)    commentNum &lt;/span&gt;= allComment[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]    data.append(commentNum)    diggNum &lt;/span&gt;= allDigg[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]    data.append(diggNum)    datalist.append(data)print(datalist)&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; datalist     #返回列表</code></pre><p>def saveData(datalist,savepath):<br>    print(</span>“save…”<span style="color: #000000;">)<br>    book </span>&#x3D; xlwt.Workbook(encoding&#x3D;”utf-8”,style_compression&#x3D;0<span style="color: #000000;">)<br>    sheet </span>&#x3D; book.add_sheet(‘博客园随笔列表’,cell_overwrite_ok&#x3D;<span style="color: #000000;">True)    #创建sheet1<br>    col </span>&#x3D; (“标题”,”原文链接”,”摘要”,”时间”,”阅读”,”评论”,”推荐”<span style="color: #000000;">)        #加标题<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,7<span style="color: #000000;">):<br>        sheet.write(</span>0<span style="color: #000000;">,i,col[i])<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,100):          #添加数据到excel*<span style="color: #000000;">（100条）<br>        print(</span>“第%d条”%(i+1<span style="color: #000000;">))        #打印条数<br>        data </span>&#x3D;<span style="color: #000000;"> datalist[i]<br>        </span><span style="color: #0000ff;">for</span> j <span style="color: #0000ff;">in</span> range(0,7<span style="color: #000000;">):<br>            sheet.write(i</span>+1<span style="color: #000000;">,j,data[j])      #添加每个子列表中的7个数据<br>    book.save(savepath)            #保存excel</p><p></span><span style="color: #0000ff;">if</span> <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“<span style="color: #000000;">:<br>    main()<br>    print(</span>“爬取完毕！”)</pre></p></div><p>hello.py的代码来自作者：<a href="https://www.cnblogs.com/wjingbo/" target="_blank">https://www.cnblogs.com/wjingbo/</a></p><p>py代码原文可前往👉：<a href="https://www.cnblogs.com/wjingbo/p/16199464.html" target="_blank">https://www.cnblogs.com/wjingbo/p/16199464.html</a></p><p>该py代码的作用是爬取指定的网站路径，然后把该路径里的相关内容取出放在excel表格里。</p><p>好了，保存并运行hello.py：</p><div class="cnblogs_code"><pre>py hello.py</pre></div><p>等待几秒即可看见生成了一个excel表格，里面是爬取<a href="https://www.cnblogs.com/wjingbo/" target="_blank">https://www.cnblogs.com/wjingbo/</a>他的文章内容。</p><p>&nbsp;</p>最后：如果你运行这个py文件出错了，报错内容还是 list index out of range（列表索引超出范围）？<p>解决方案：：你可以尝试去打印一下某个变量的值是否为空，这个报错是因为某个变量的值为空了所以就报了这个错。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo路径出现%7C%7</title>
+      <link href="/2023/06/03/hexo/hexo%E8%B7%AF%E5%BE%84%E5%87%BA%E7%8E%B0-7C-7/"/>
+      <url>/2023/06/03/hexo/hexo%E8%B7%AF%E5%BE%84%E5%87%BA%E7%8E%B0-7C-7/</url>
+      
+        <content type="html"><![CDATA[<p>该问题是由一个sidebar.swig文件引起的</p><p>解决方案：打开 你的博客\themes\hexo-theme-next\layout_macro<br> <span id="more"></span></p><p>在里面找到sidebar.swig文件，把判断代码去掉</p><p>修改前：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if config.archive_dir != &#x27;/&#x27; and site.posts.length &gt; 0 %&#125;</span><br><span class="line">    &lt;div class=&quot;site-state-item site-state-posts&quot;&gt;</span><br><span class="line">    &#123;% if theme.menu.archives %&#125;</span><br><span class="line">      &lt;a href=&quot;&#123;&#123; url_for(theme.menu.archives).split(&#x27;||&#x27;)[0] | trim &#125;&#125;&quot;&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">      &lt;a href=&quot;&#123;&#123; url_for(config.archive_dir) &#125;&#125;&quot;&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">        &lt;span class=&quot;site-state-item-count&quot;&gt;&#123;&#123; site.posts.length &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;site-state-item-name&quot;&gt;&#123;&#123; __(&#x27;state.posts&#x27;) &#125;&#125;&lt;/span&gt;</span><br><span class="line">      &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><p>修改后：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if config.archive_dir != &#x27;/&#x27; and site.posts.length &gt; 0 %&#125;</span><br><span class="line">    &lt;div class=&quot;site-state-item site-state-posts&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;a href=&quot;&#123;&#123; url_for(theme.menu.archives).split(&#x27;||&#x27;)[0] | trim &#125;&#125;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;a href=&quot;&#123;&#123; url_for(config.archive_dir) &#125;&#125;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;span class=&quot;site-state-item-count&quot;&gt;&#123;&#123; site.posts.length &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;site-state-item-name&quot;&gt;&#123;&#123; __(&#x27;state.posts&#x27;) &#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><p>修改完后，保存，在终端运行</p><p><code>hexo clean</code></p><p><code>hexo g</code></p><p><code>hexo s</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo设置中文</title>
+      <link href="/2023/06/03/hexo/hexo%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87/"/>
+      <url>/2023/06/03/hexo/hexo%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<p>我的博客使用的主题是Next主题</p><p>在你的博客\themes\hexo-theme-next\languages中可以看到很多的语言包</p><p>比如我要设置博客文件为简体中文，对应的就是zh-Hans</p><p>接着，在博客根目录打开_comfig.yml，修改language的值为zh-Hans即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Failed to minify the code from this file</title>
+      <link href="/2022/03/31/technology/Failed-to-minify-the-code-from-this-file/"/>
+      <url>/2022/03/31/technology/Failed-to-minify-the-code-from-this-file/</url>
+      
+        <content type="html"><![CDATA[<p>前言：项目打包报错。</p><p>报错内容：</p><div class="cnblogs_code"><pre><span style="color: #008080;"> 1</span> <span style="color: #000000;">Creating an optimized production build...</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">Failed to compile.</span><span style="color: #008080;"> 3</span> <span style="color: #008080;"> 4</span> Failed to minify the code from <span style="color: #0000ff;">this</span><span style="color: #000000;"> file:</span><span style="color: #008080;"> 5</span> <span style="color: #008080;"> 6</span> ./node_modules/_asn1.js@5.4.1@asn1.js/lib/asn1/base/node.js:283<span style="color: #008080;"> 7</span> <span style="color: #008080;"> 8</span> Read more here: http:<span style="color: #008000;">//</span><span style="color: #008000;">bit.ly/2tRViJ9</span><span style="color: #008080;"> 9</span> <span style="color: #008080;">10</span> npm ERR!<span style="color: #000000;"> code ELIFECYCLE</span><span style="color: #008080;">11</span> npm ERR! errno 1<span style="color: #008080;">12</span> npm ERR! ltjyd@0.1.0 build: `node scripts/build.js`<span style="color: #008080;">13</span> npm ERR! Exit status 1<span style="color: #008080;">14</span> npm ERR!<span style="color: #008080;">15</span> npm ERR! Failed at the ltjyd@0.1.0<span style="color: #000000;"> build script.</span><span style="color: #008080;">16</span> npm ERR! This is probably not a problem <span style="color: #0000ff;">with</span><span style="color: #000000;"> npm. There is likely additional logging output above.</span><span style="color: #008080;">17</span> <span style="color: #008080;">18</span> npm ERR! A complete log of <span style="color: #0000ff;">this</span> run can be found <span style="color: #0000ff;">in</span><span style="color: #000000;">:</span><span style="color: #008080;">19</span> npm ERR! C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\2022-03-31T08_22_24_542Z-debug.log</pre></div><pre class="highlighter-hljs">关键内容：<code>Failed to minify the code from this file: ./node_modules/_asn1.js@5.4.1@asn1.js/lib/asn1/base/node.js:283</code></pre><p>翻译：未能缩小此文件👇中的代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./node_modules/_asn1.js@5.4.1@asn1.js/lib/asn1/base/node.js:283</span><br></pre></td></tr></table></figure><p>原因：该文件里的代码无法被打包，定位到该行代码： 【let result &#x3D; state[‘default’];】<br>解决方案：把let改为var。<br>结束语：<br>不要问我为什么，我也是找了篇文章看了才解决的，后续打包也是遇到这个问题，我依旧把let改成var就行了。<br>据原文作者说是es6转不了es5，也许就是这个原因吧。<br>原文在这：<a href="https://blog.csdn.net/u010391930/article/details/118188243">https://blog.csdn.net/u010391930/article/details/118188243</a><br>额嗯呃emmmm，其实，额，怎么说呢。<br>在我快写完这个日志的时候，我同事告诉我，这个项目其实已经打包成功了。也就是说，可以不用理会这种报错。。。<br>emmm…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
