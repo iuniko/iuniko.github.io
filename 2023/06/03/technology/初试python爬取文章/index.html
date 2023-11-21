@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,技术," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="注意：本实验是在windows系统下操作。 首先配置python环境以及安装一些必要的库： 安装python请前往python官网下载，仙人指路👉https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.11.3&#x2F;python-3.11.3-amd64.exe 下载完并安装成功后，在终端输入  py --version  输出：Python 3.11.3 检查pip是否安装成功，p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初试python爬取文章">
+<meta property="og:url" content="http://iuniko.github.io/2023/06/03/technology/%E5%88%9D%E8%AF%95python%E7%88%AC%E5%8F%96%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="记忆宝藏">
+<meta property="og:description" content="注意：本实验是在windows系统下操作。 首先配置python环境以及安装一些必要的库： 安装python请前往python官网下载，仙人指路👉https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.11.3&#x2F;python-3.11.3-amd64.exe 下载完并安装成功后，在终端输入  py --version  输出：Python 3.11.3 检查pip是否安装成功，p">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-06-03T03:49:37.000Z">
+<meta property="article:modified_time" content="2023-06-06T08:34:19.224Z">
+<meta property="article:author" content="chenweijian">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iuniko.github.io/2023/06/03/technology/初试python爬取文章/"/>
+
+
+
+
+
+  <title>初试python爬取文章 | 记忆宝藏</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">记忆宝藏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活无小事，日常多记忆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iuniko.github.io/2023/06/03/technology/%E5%88%9D%E8%AF%95python%E7%88%AC%E5%8F%96%E6%96%87%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记忆宝藏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">初试python爬取文章</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-06-03T11:49:37+08:00">
+                2023-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>注意：本实验是在windows系统下操作。</p>
+<p>首先配置python环境以及安装一些必要的库：</p>
+<p>安装python请前往python官网下载，仙人指路👉<a href="https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe" target="_blank">https://www.python.org/ftp/python/3.11.3/python-3.11.3-amd64.exe</a></p>
+<p>下载完并安装成功后，在终端输入</p>
+<div class="cnblogs_code">
+<pre>py --version</pre>
+</div>
+<pre>输出：Python 3.11.3</pre>
+<p>检查pip是否安装成功，ps：一般现在安装python都会带有pip；</p>
+<div class="cnblogs_code">
+<pre>pip --version</pre>
+</div>
+<p>或者</p>
+<div class="cnblogs_code">
+<pre>pip3 --version</pre>
+</div>
+ <span id="more"></span>
+输出pip 22.3.1
+<p>如果都不输出版本号，可以查看一下系统变量有没有配置了pip的路径，没有配置就配置一下：</p>
+<p>找到python安装路径，打开环境变量-系统变量，选择path，选择新建，把python script文件夹路径复制进去即可。</p>
+<p>实在是没有安装可以到这里安装下载pip：<a href="https://pip.pypa.io/en/stable/installation/#" target="_blank">https://pip.pypa.io/en/stable/installation/#</a></p>
+<p>上面两都有版本号了即表示第一步成功，接着安装4个库：</p>
+<div class="cnblogs_code">
+<pre>pip install requests</pre>
+</div>
+<div class="cnblogs_code">
+<pre>pip install beautifulsoup4</pre>
+</div>
+<div class="cnblogs_code">
+<pre>pip install xlwt</pre>
+</div>
+<div class="cnblogs_code">
+<pre>pip install pymysql</pre>
+</div>
+<div>各自库的作用是：</div>
+<div>requests：获取网页数据</div>
+<div>BeautifulSoup：网页解析</div>
+<div>
+<div>xlwt：进行excel操作</div>
+<div>pymysql：<em id="__mceDel">连接mysql数据库</em></div>
+</div>
+<p>这样第二步就算完成了，第三步：新建hello.py，输入代码：</p>
+<div class="cnblogs_code">
+<pre># -*- coding = utf-8 -*-<span style="color: #000000;">
+# @Time : </span>2022/4/27 8:21<span style="color: #000000;">
+# @Author :王敬博
+# @File : test.py
+# @Software: PyCharm
+from bs4 import BeautifulSoup  #网页解析
+import re    #正则表表达式文字匹配
+import urllib.request,urllib.error  #指定url，获取网页数据
+import xlwt  #进行excel操作
+import sqlite3  #进行SQLite数据库操作
+import pymysql.cursors  #连接mysql数据库
+
+<p>def main():<br>    baseurl </span>&#x3D; “<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wjingbo/default.html?page=">https://www.cnblogs.com/wjingbo/default.html?page=</a>“<span style="color: #000000;"><br>    datalist </span>&#x3D;<span style="color: #000000;"> getData(baseurl)         #调研分析数据函数<br>    #</span>1<span style="color: #000000;"> 爬取网页<br>    savepath </span>&#x3D; “.\权。的博客信息.xls”<span style="color: #000000;">     #excel保存的位置名称 #注意：！这里的名字可以自定义，比如iuniko.xls<br>    saveData(datalist,savepath)          #调用保存函数</p>
+<p>def askURL(url):<br>    head </span>&#x3D;<span style="color: #000000;"> {   #伪装请求头，模拟浏览器访问<br>       </span>“User-Agent”:” Mozilla &#x2F; 5.0(Linux;Android6.0;Nexus5 Build &#x2F; MRA58N) AppleWebKit &#x2F; 537.36(KHTML, likeGecko) Chrome &#x2F; 99.0.4844.51Mobile Safari &#x2F; 537.36”<span style="color: #000000;"><br>    }<br>    request </span>&#x3D; urllib.request.Request(url,headers&#x3D;<span style="color: #000000;">head)<br>    html </span>&#x3D; “”<br>    <span style="color: #0000ff;">try</span><span style="color: #000000;">:<br>        response </span>&#x3D;<span style="color: #000000;"> urllib.request.urlopen(request)<br>        html </span>&#x3D; response.read().decode(‘utf-8’<span style="color: #000000;">)<br>        #print(html)<br>    except urllib.error.URLError as e:<br>        </span><span style="color: #0000ff;">if</span> hasattr(e,”code”<span style="color: #000000;">):<br>            print(e.code)<br>        </span><span style="color: #0000ff;">if</span> hasattr(e,”reason”<span style="color: #000000;">):<br>            print(e.reason)<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> html  #返回爬到所有的html数据</p>
+<p>#正则表达式控制获取详细内容<br>findTitle </span>&#x3D; re.compile(r’&lt;span&gt;(.<em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">,re.S)<br>findlink </span>&#x3D; re.compile(r’&lt;a class&#x3D;”postTitle2 vertical-middle” href&#x3D;”(.</em>?)”&gt;’<span style="color: #000000;">)<br>findzhaiyao </span>&#x3D; re.compile(r’&lt;div class&#x3D;”c_b_p_desc”(.<em>?)&lt;a’<span style="color: #000000;">,re.S)<br>#注意了！这里有一个坑，原作者没有标记出来，就是下面这个权字你得换成你的博客的名字，比如我博客名字叫哎呦你可棒棒了，那就填这个名字进去，不然会报错：list index out of range<br>finddate </span>&#x3D; re.compile(r’&lt;div class&#x3D;”postDesc”&gt;posted @(.</em>?)权’<span style="color: #000000;">,re.S)<br>findread </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-view-count” data-post-id&#x3D;(.<em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)<br>findcomment </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-comment-count” data-post-id&#x3D;(.</em>?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)<br>finddigg </span>&#x3D; re.compile(r’&lt;span class&#x3D;”post-digg-count” data-post-id&#x3D;(.*?)&lt;&#x2F;span&gt;’<span style="color: #000000;">)</p>
+<p>def getData(baseurl):<br>    datalist </span>&#x3D; []  # 2<span style="color: #000000;"> 解析数据<br>    allTitle </span>&#x3D;<span style="color: #000000;"> []  #存储标题<br>    allLink </span>&#x3D;<span style="color: #000000;"> []   #存储链接<br>    allZhaiyao </span>&#x3D;<span style="color: #000000;"> [] #存储摘要<br>    alldate </span>&#x3D;<span style="color: #000000;"> []    #存储日期<br>    allRead </span>&#x3D;<span style="color: #000000;"> []    #存储阅读数<br>    allComment </span>&#x3D;<span style="color: #000000;"> [] #存储评论数<br>    allDigg </span>&#x3D;<span style="color: #000000;"> []    #存储推荐数 # 注意：45代表爬取45页，我的公开的随笔数量是440，所以我要写成45，也就是会爬取450条数据<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,10<span style="color: #000000;">):<br>        url </span>&#x3D; baseurl + str(i+1)    #对目标链接地址page&#x3D;<span style="color: #000000;">后面的数字进行循环<br>        html </span>&#x3D;<span style="color: #000000;"> askURL(url)          #调用爬取的函数<br>        soup </span>&#x3D; BeautifulSoup(html, “html.parser”<span style="color: #000000;">)</p>
+<pre><code>    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt; item &lt;span style=&quot;color: #0000ff;&quot;&gt;in&lt;/span&gt; soup.find_all(&#39;div&#39;,class_=&quot;day&quot;&lt;span style=&quot;color: #000000;&quot;&gt;):  #简单过滤信息
+        #print(item)
+
+        item &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; str(item)
+
+        title &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findTitle,item)     #匹配数据
+        allTitle.extend(title)      #添加数据到列表
+
+        link &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findlink,item)
+        allLink.extend(link)
+
+        zhaiyao &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findzhaiyao,item)
+        allZhaiyao.extend(zhaiyao)
+
+        date &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(finddate,item)
+        alldate.extend(date)
+
+        readNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findread,item)
+        allRead.extend(readNum)
+
+        commentNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(findcomment,item)
+        allComment.extend(commentNum)
+
+        diggNum &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; re.findall(finddigg,item)
+        allDigg.extend(diggNum)
+#print(allTitle)
+#print(allLink)
+#print(allZhaiyao)
+#print(alldate)
+#print(allRead)
+#print(allComment)
+#print(allDigg)
+
+&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt; j &lt;span style=&quot;color: #0000ff;&quot;&gt;in&lt;/span&gt; range(0,100&lt;span style=&quot;color: #000000;&quot;&gt;):     #循环10页就是100条数据，45页就是450条数据 #这个循环是过滤掉所有不需要的信息
+    data &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; []
+    title &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allTitle[j].strip()     #去除字符串里的空格
+    data.append(title)
+
+    link &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allLink[j]
+    data.append(link)
+
+    zhaiyao &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; allZhaiyao[j].strip()
+    zhaiyao &lt;/span&gt;= zhaiyao.split(&#39;&quot;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]
+    data.append(zhaiyao.replace(&lt;/span&gt;&quot;\n&quot;,&quot;&quot;&lt;span style=&quot;color: #000000;&quot;&gt;))
+
+    date &lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt; alldate[j].strip()
+    data.append(date)
+
+    readNum &lt;/span&gt;= allRead[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]      #通过分割字符串来去除无用信息
+    data.append(readNum)
+
+    commentNum &lt;/span&gt;= allComment[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]
+    data.append(commentNum)
+
+    diggNum &lt;/span&gt;= allDigg[j].split(&#39;&amp;gt;&#39;)[1&lt;span style=&quot;color: #000000;&quot;&gt;]
+    data.append(diggNum)
+
+    datalist.append(data)
+
+print(datalist)
+&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; datalist     #返回列表
+</code></pre>
+<p>def saveData(datalist,savepath):<br>    print(</span>“save…”<span style="color: #000000;">)<br>    book </span>&#x3D; xlwt.Workbook(encoding&#x3D;”utf-8”,style_compression&#x3D;0<span style="color: #000000;">)<br>    sheet </span>&#x3D; book.add_sheet(‘博客园随笔列表’,cell_overwrite_ok&#x3D;<span style="color: #000000;">True)    #创建sheet1<br>    col </span>&#x3D; (“标题”,”原文链接”,”摘要”,”时间”,”阅读”,”评论”,”推荐”<span style="color: #000000;">)        #加标题<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,7<span style="color: #000000;">):<br>        sheet.write(</span>0<span style="color: #000000;">,i,col[i])<br>    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(0,100):          #添加数据到excel*<span style="color: #000000;">（100条）<br>        print(</span>“第%d条”%(i+1<span style="color: #000000;">))        #打印条数<br>        data </span>&#x3D;<span style="color: #000000;"> datalist[i]<br>        </span><span style="color: #0000ff;">for</span> j <span style="color: #0000ff;">in</span> range(0,7<span style="color: #000000;">):<br>            sheet.write(i</span>+1<span style="color: #000000;">,j,data[j])      #添加每个子列表中的7个数据<br>    book.save(savepath)            #保存excel</p>
+<p></span><span style="color: #0000ff;">if</span> <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“<span style="color: #000000;">:<br>    main()<br>    print(</span>“爬取完毕！”)</pre></p>
+</div>
+<p>hello.py的代码来自作者：<a href="https://www.cnblogs.com/wjingbo/" target="_blank">https://www.cnblogs.com/wjingbo/</a></p>
+<p>py代码原文可前往👉：<a href="https://www.cnblogs.com/wjingbo/p/16199464.html" target="_blank">https://www.cnblogs.com/wjingbo/p/16199464.html</a></p>
+<p>该py代码的作用是爬取指定的网站路径，然后把该路径里的相关内容取出放在excel表格里。</p>
+<p>好了，保存并运行hello.py：</p>
+<div class="cnblogs_code">
+<pre>py hello.py</pre>
+</div>
+<p>等待几秒即可看见生成了一个excel表格，里面是爬取<a href="https://www.cnblogs.com/wjingbo/" target="_blank">https://www.cnblogs.com/wjingbo/</a>他的文章内容。</p>
+<p>&nbsp;</p>
+最后：如果你运行这个py文件出错了，报错内容还是 list index out of range（列表索引超出范围）？
+
+<p>解决方案：：你可以尝试去打印一下某个变量的值是否为空，这个报错是因为某个变量的值为空了所以就报了这个错。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/06/03/hexo/hexo%E8%B7%AF%E5%BE%84%E5%87%BA%E7%8E%B0-7C-7/" rel="next" title="hexo路径出现%7C%7">
+                <i class="fa fa-chevron-left"></i> hexo路径出现%7C%7
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/06/03/hexo/hexo-next%E4%B8%BB%E9%A2%98%E4%B9%8B%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95%E5%9B%BE%E6%A0%87/" rel="prev" title="hexo+next主题之如何设置菜单图标">
+                hexo+next主题之如何设置菜单图标 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenweijian</span>
+
+  
+  <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/recordQuery">粤ICP备2023126561号</a>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
